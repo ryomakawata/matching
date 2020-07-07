@@ -1,0 +1,10 @@
+.recruit {
+    border: solid 2px;
+    border-radius: 10px;
+    border-color: #4597F5;
+    margin: 50px;
+}
+
+.recruit-title {
+    font-size: 25px;
+}

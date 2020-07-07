@@ -1,0 +1,40 @@
+{% load static %}
+{% load bootstrap4 %}
+{% load fontawesome %}
+{% fontawesome_stylesheet %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <script src="{% static 'user.js' %}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<!--ヘッダー-->
+<header>
+<div class="header-content">
+    <div class="headline"><a href="{% url 'home' %}"><img src="{{ MEDIA_URL }}documents/logo.png" alt="次へ" width="135" height="50"></a></div>
+    <ul class="nav-list">
+        <li class="nav__item"><a href="{% url 'search' %}">仲間を探す</a></li>
+        <li class="nav__item"><a href="{% url 'recruit_create' %}">新しく募集する</a></li>
+        <li class="nav__item"><a href="{% url 'profile' %}">プロフィール</a></li>
+        <li class="nav__item"><a href=http://127.0.0.1:8000/accounts/logout>ログアウト</a></li>
+    </ul>
+</div>
+</header>
+<!--コンテンツ-->
+<body>
+    {% block content %}{% endblock %}
+</body>
+<!--フッター-->
+<footer>
+    <div class="footer"><a href="{% url 'term' %}">ご利用規約</a></div>
+    <div class="footer"><a href="{% url 'privacy' %}">プライバシーポリシー</a></div>
+    <div class="footer"><a href="{% url 'inquiry' %}">お問い合わせ</a></div>
+    <div class="footer"><a href=http://127.0.0.1:8000/accounts/logout>ログアウト</a></div>
+</footer>
+</html>
+

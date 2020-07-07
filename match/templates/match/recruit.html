@@ -1,0 +1,24 @@
+{% extends "match/base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% block title %}募集画面{% endblock %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/recruit.css' %}">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<script src="{% static 'user.js' %}"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<h1>募集状況</h1>
+
+<table>
+    {% for item in data %}
+        <div class="recruit">
+        <div class="recruit-title"><a href="{% url 'other_recruit' item.id %}">{{ item.recruit_title }}</a></div>
+        <p>募集日：{{ item.pub_date|date:"Y-m-j "}}</p>
+        <p>カテゴリー：{{ item.category }}</p>
+        <p><a href="{% url 'recruit_edit' item.id %}">編集する</a></p>
+        <p><a href="{% url 'recruit_delete' item.id %}">削除</a></p>
+        <br>
+        </div>
+    {% endfor %}
+</table>
+{% endblock %}

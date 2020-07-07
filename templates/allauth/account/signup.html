@@ -1,0 +1,31 @@
+<!--Bootstrapの適応はできたからデザインをもう少し勉強する-->
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Signup" %}{% endblock %}
+
+{% block content %}
+<h1>{% trans "Sign Up" %}</h1>
+<p>{% blocktrans %}すでにアカウントをお持ちですか? お持ちの方は次に<a href="{{ login_url }}">ログイン</a>してください{% endblocktrans %}</p>
+<div class="row justify-content-center">
+  <div class="col-lg-8 col-md-10 col-sm-12">
+      <div class="card mb-4 shadow-sm">
+          <div class="card-header">
+              <h4 class="my-0 font-weight-nomal">ユーザー登録</h4>
+          </div>
+          <div class="card-body">
+            <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+              {% csrf_token %}
+              {{ form.as_p }}
+              {% if redirect_field_value %}
+              <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+              {% endif %}
+              <button type="submit">{% trans "Sign Up" %} &raquo;</button>
+            </form>
+          </div>
+          
+      </div>
+  </div>
+</div>
+{% endblock %}

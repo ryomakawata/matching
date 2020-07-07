@@ -1,0 +1,40 @@
+{% extends "match/base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% block title %}募集画面{% endblock %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/other_recruit.css' %}">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<script src="{% static 'user.js' %}"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<div class="img-name">
+<img class="profile-img" src="{{ MEDIA_URL }}{{profile.image}}" width=200 >
+<h1 class="profile-name">募集者: {{profile.name}}</h1>
+</div>
+<div class="other-recruit">
+    <div class="other-recruit-content">
+    <h1 class="recruit-title">{{data.recruit_title}}</h1>
+    <h2 class="date">募集日: {{data.pub_date|date:"Y-m-j "}}</h2>
+    <h3 class="category">カテゴリ: {{data.category}}</h3>
+    {% for item in language %}
+    <h3 class="language">使用言語: {{item.language}}</h3>
+    {% endfor %}
+    <div class="recruit_content">
+        <h3>募集内容:</h3>
+        <h5>{{data.recruit_content}}</h5>
+    </div>
+    <h2 class="recruit-user">募集者: {{profile.name}}</h2>
+    <h3 class="recruit-school">学校: {{profile.school}}</h3>
+    <div class="skill">
+    {% for item in skill %}
+    <h3>スキル：{{item.skill}}　　経験年数：{{item.experience}}</h3>
+    {% endfor %}
+    </div>
+    <div class="self_introduction">
+    <h3>自己紹介:</h3>
+    <h5>{{profile.self_introduction}}</h5>
+    </div>
+    </div>
+</div>
+<div class="message"><a class="btn-message" href="{% url 'message' %}">メッセージを送る</a></div>
+{% endblock %}

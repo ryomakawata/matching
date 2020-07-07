@@ -1,0 +1,23 @@
+{% extends "match/base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/recruit_delete.css' %}">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<script src="{% static 'user.js' %}"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<h3>以下の募集を削除しますか？</h3>
+<h2>募集タイトル</h2>
+<h2>{{data.recruit_title}}</h2>
+<h2>募集日</h2>
+<h2>{{data.pub_date}}</h2>
+<h3>カテゴリ</h3>
+<h5>{{data.category}}</h5>
+<h3>募集内容</h3>
+<h5>{{data.recruit_content}}</h5>
+<form action="{% url 'recruit_delete' id %}" method="post">
+{% csrf_token %}
+<tr><th></th><td><input type="submit" value="削除"></td></tr>
+</form>
+<a href="{% url 'recruit' %}">戻る</a>
+{% endblock %}

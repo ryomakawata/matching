@@ -1,0 +1,35 @@
+{% extends "match/base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% block title %}プロフィール作成画面{% endblock %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/profile_create.css' %}">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<script src="{% static 'user.js' %}"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<h1>プロフィール作成画面</h1>
+<h2>{{test}}</h2>
+<!--
+    写真を表示するときはformの引数にenctype="multipart/form-data"を付ける
+-->
+<div class="profile-form">
+<form action="" method="post" enctype="multipart/form-data">
+    <div class="form-list">{{ form.as_p }}</div>
+
+    <h2>スキル一覧</h2>
+    {{ formset.management_form }}
+    <div id="file-area">
+        {% for file_form in formset %}
+            {{ file_form.as_p }}
+            <hr>
+        {% endfor %}
+    </div>
+    {% csrf_token %}
+    <div class='btn-profile'><button type="submit" class="btn btn-primary">登録</button></div>
+</form>
+</div>
+
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/slick.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/home.js' %}"></script>
+{% endblock %}

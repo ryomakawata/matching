@@ -1,0 +1,29 @@
+{% extends "match/base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% block title %}プロフィール{% endblock %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<script src="{% static 'user.js' %}"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<p>プロフィールを充実されることでマッチング率が上がります</p>
+<div class="img-name">
+<img class="profile-img" src="{{ MEDIA_URL }}{{profile.image}}" width=200 >
+<h5 class="username">{{profile.name}}</h5>
+</div>
+<div class="introduction">
+<h3 class="school">学校:  {{profile.school}}</h3>
+{% for item in skill %}
+<h3>スキル：{{item.skill}}　　経験年数：{{item.experience}} <a href="{% url 'skill_delete' item.id %}">削除</a></h3>
+
+{% endfor %}
+
+<h3>自己紹介</h3>
+<h5 class="self_introduction">{{profile.self_introduction}}</h5>
+</div>
+
+<div class="profile-edit"><a class="btn-square-shadow" href="{% url 'profile_edit' %}">編集</a></div>
+<div class="recruit"><a href="{% url 'recruit' %}">募集状況を見る⇒</a></div>
+
+{% endblock %}

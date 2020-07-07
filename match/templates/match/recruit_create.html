@@ -1,0 +1,27 @@
+{% extends "match/base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% block title %}募集作成画面{% endblock %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/recruit_create.css' %}">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<script src="{% static 'user.js' %}"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<h1>募集作成画面</h1>
+<h2>{{test}}</h2>
+<table class="recruit_create">
+    <form action="{% url 'recruit_create' %}" method="post">
+    {{ form.as_table }}
+    <div class="languages">
+        {{ language.management_form }}
+        <div id="file-area">
+            {% for file_form in language %}
+                {{ file_form.as_table }}
+            {% endfor %}
+        </div>
+    </div>
+    {% csrf_token %}
+    <tr><td></td><td><input type="submit" value="投稿"></td></tr>
+    </form>
+</table>
+{% endblock %}

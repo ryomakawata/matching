@@ -1,0 +1,60 @@
+{% extends "match/base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<h1>学生エンジニアとつながろう！</h1>
+<p>一緒にプログラミングを勉強する仲間が欲しい</p>
+<p>プログラミングスクールに行くお金がないけど早くスキルを身に付けたい</p>
+<p>自分に合った勉強会に参加したい</p>
+<p>アイデアはないが誰かと一緒に何かを作りたい</p>
+<p>チーム開発の経験を早く積みたい</p>
+<p>作りたいサービスがあるので仲間を集めたい</p>
+<p>就職する前に自分がエンジニアに向いているか知りたい</p>
+<p>IT分野で起業を考えているがなかなかエンジニアが見つからない</p>
+<p>早く開発経験を積みたいがインターンが人気でなかなか入れない</p>
+
+<h3>サービス内容</h3>
+<p>学生エンジニアと気軽に繋がれる</p>
+<p>目的に合わせた検索で最適なマッチング</p>
+<p>他の学生エンジニアの情報が得られる</p>
+<p>アイデアがなくても作りたいものが見つかる</p>
+<p>リモート開発経験が積める</p>
+{% if data > 0 %}
+<a href="{% url 'profile' %}">プロフィール</a>
+<a href="{% url 'recruit' %}">募集状況</a>
+{% else %}
+<a href="{% url 'profile_create' %}">プロフィール作成画面</a>
+{% endif %}
+
+<div id="area1">
+    <button type="button" id="btn1">今日は何日ですか？</button>
+    <br>
+    <input type="text" id="tBox" class="font-main" />
+</div>
+
+<h3>テスト</h3>
+<p>
+<form name="test">
+<select name="linkselect" onChange="kakunin()">
+<option value="">選択して下さい</option>
+<option value="http://www.yahoo.co.jp/">Yahoo!Japan</option>
+<option value="http://www.google.co.jp/">Google</option>
+<option value="{% url 'profile' %}">プロフィール</option>
+</select>
+</form>
+</p>
+
+<div class="hoge">
+    <li><a href="#"><img src="{{ MEDIA_URL }}documents/poodle.jpg" alt="次へ" width="135" height="50"></a></li>
+    <li><a href="#"><img src="{{ MEDIA_URL }}documents/lion.jpg" alt="次へ" width="135" height="50"></a></li>
+    <li><a href="#"><img src="{{ MEDIA_URL }}documents/shibainu.jpg" alt="次へ" width="135" height="50"></a></li>
+</div>
+
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/slick.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/home.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,82 @@
+.other-recruit {
+    width: 70%;
+    margin: auto;
+}
+
+.other-recruit-content {
+    background-color: rgb(233, 242, 245);
+}
+
+.profile-name {
+    color: black;
+    font-size: 40px;
+    padding: 20px 0px 40px 40px;
+}
+
+.profile-img,.profile-name {
+    float: left;
+    padding: 30px,30px,10px,30px;
+    
+}
+
+.img-name{
+    overflow: hidden;
+    padding: 30px 0px 10px 40px;
+}
+
+img.profile-img {
+    border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+    width:  100px;       /* ※縦横を同値に */
+    height: 100px;       /* ※縦横を同値に */
+    border: 7px solid rgb(65, 62, 62);
+}
+
+.recruit-title {
+    padding: 15px;
+}
+
+.date {
+    padding: 0px 0px 15px 15px;
+}
+
+.category {
+    padding: 0px 0px 15px 15px;
+}
+
+.language {
+    padding: 0px 0px 15px 15px;
+}
+
+.recruit_content {
+    padding: 0px 0px 15px 15px;
+}
+
+.recruit-user {
+    padding: 0px 0px 15px 15px;
+}
+
+.recruit-school {
+    padding: 0px 0px 15px 15px;
+}
+
+.skill {
+    padding: 0px 0px 15px 15px;
+}
+
+.self_introduction {
+    padding: 0px 0px 15px 15px;
+}
+
+.message {
+    height: 40px;
+    width: 200px;
+    margin:20px auto;
+    padding: 0.15em 1em;
+    font-size: 20px;
+    background: #7db7fa;/*ボタン色*/
+    border-radius: 3px;
+}
+
+.btn-message {
+    color: #FFF;
+}

@@ -1,0 +1,129 @@
+.introduction{
+    margin:2em 0;
+    position: relative;
+    padding: 0.25em 1em;
+    border: solid 2px #4597F5;
+    border-radius: 3px 0 3px 0;
+    width:60%;
+    margin: 10px auto;
+}
+.introduction:before,.introduction:after
+{
+    content: '';
+    position: absolute;
+    width:10px;
+    height: 10px;
+    border: solid 2px #4597F5;
+    border-radius: 50%;
+}
+.introduction:after {
+    top:-12px;
+    left:-12px;
+}
+.introduction:before {
+    bottom:-12px;
+    right:-12px;
+}
+
+
+h5.username {
+    color: black;
+    font-size: 70px;
+    padding: 0px 0px 40px 40px;
+}
+
+h1.profile{
+    color:red;
+    font-size: 65px;
+}
+
+img.profile-img {
+    border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+    width:  100px;       /* ※縦横を同値に */
+    height: 100px;       /* ※縦横を同値に */
+    border: 7px solid rgb(65, 62, 62);
+}
+/*font-family: 'FontAwesome';  content: "\f083";*/
+
+img.profile-img,h5.username {
+    float: left;
+    padding: 30px,30px,10px,30px;
+    
+}
+
+.img-name{
+    overflow: hidden;
+    padding: 30px 0px 10px 40px;
+}
+
+.school {
+    font-size: 40px;
+    color: black;
+    padding: 30px 0px 30px 0px;
+}
+
+.skill {
+    font-size: 40px;
+    color: black;
+    padding: 0px 0px 30px 0px;
+}
+
+h5.self_introduction{
+    position: relative;
+    margin: 2em 0 2em 40px;
+    padding: 8px 15px;
+    background: lightblue;
+    border-radius: 30px;
+    margin: 10px auto;
+    width:70%;
+}
+/*
+h5.self_introduction:before{font-family: FontAwesome;
+    content: "\f111";
+    position: absolute;
+    font-size: 15px;
+    left: -40px;
+    bottom: 6.5em;
+    color:lightblue;
+}
+h5.self_introduction:after{
+    font-family: FontAwesome;
+    content: "\f111";
+    position: absolute;
+    font-size: 23px;
+    left: -23px;
+    bottom: 3.8em;
+    color: lightblue;
+}
+*/
+.profile-edit{
+    margin: 10px auto;
+    width: 140px;
+}
+
+.btn-square-shadow {
+    display: inline-block;
+    height: 60px;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #7db7fa;/*ボタン色*/
+    color: #FFF;
+    border-radius: 3px;
+    font-size: 25px;
+}
+.btn-square-shadow:active {
+    /*ボタンを押したとき*/
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    border-bottom: none;
+}
+
+.recruit {
+    height: 40px;
+    width: 200px;
+    margin:auto;
+    padding: 0.5em 1em;
+    font-size: 20px;
+}
+
