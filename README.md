@@ -5,7 +5,7 @@
 
 編集中
 
-＃ 特徴
+# Featue
 リモート開発に対応しています。
 
 # Requirement
