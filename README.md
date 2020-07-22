@@ -3,8 +3,7 @@
 
 # DEMO
 
-編集中
-
+http://gakuen-env.eba-b325v95t.ap-northeast-1.elasticbeanstalk.com/match/home
 # Featue
 リモート開発に対応しています。
 
